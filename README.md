@@ -7,5 +7,5 @@
 
 ### Example:
 \[
-50 \times 1e8 \times 1e18 / 3.91311219864 \times 10^{11}
+50 \times 1e8 \times 1e18 / 391311219864
 \]

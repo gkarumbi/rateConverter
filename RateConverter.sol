@@ -40,7 +40,8 @@ contract RateConverter{
         (,int256 price,,,) = priceFeed.latestRoundData();
 
         //require(price > 0, "Invalid price");
-        ethAmount = (_ethAmount * uint256(price))/1e8;
+        //ethAmount = (_ethAmount * uint256(price))/1e8;
+        ethAmount = (_ethAmount * uint256(price));
         return ethAmount;
 
     }
@@ -50,7 +51,8 @@ contract RateConverter{
                 AggregatorV3Interface priceFeed = AggregatorV3Interface(0x694AA1769357215DE4FAC081bf1f309aDC325306);
                 (,int256 price,,,) = priceFeed.latestRoundData();
                 
-                dollarAmount = (_dollarAmount * 1e18) / uint256(price) * 1e8;
+                //dollarAmount = (_dollarAmount  / uint256(price)) * 1e18;
+                dollarAmount = (_dollarAmount* 1e8 * 1e18) / (uint256(price));
                 
                 //dollar = uint256(price);
                 return dollarAmount; //price in wei
